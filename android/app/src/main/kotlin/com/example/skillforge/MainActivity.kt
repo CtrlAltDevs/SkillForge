@@ -1,4 +1,4 @@
-package com.example.skillforge
+package com.skillforge.app
 
 import io.flutter.embedding.android.FlutterActivity
 
