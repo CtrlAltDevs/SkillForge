@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skillforge/pages/home_screen.dart';
+import 'package:skillforge/utils/app_colors.dart';
 import 'package:skillforge/widgets/grey_button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -13,6 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundGreen,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -24,13 +26,13 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Text(
                 "Join in our community",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                style: TextStyle(fontSize: 22.0, color: Colors.white),
               ),
               Spacer(),
               GreyButton(
                 onPressed: () {},
                 name: 'Sign up with email',
-                color: Colors.blue,
+                color: AppColors.mainGreen,
                 textColor: Colors.white,
               ),
               GreyButton(
