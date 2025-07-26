@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:skillforge/pages/home_screen.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:skillforge/utils/app_colors.dart';
-import 'package:skillforge/widgets/grey_button.dart';
+import 'package:skillforge/widgets/custom_button.dart';
+import 'package:skillforge/widgets/custom_text_form_field.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -14,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundGreen,
+      backgroundColor: AppColors.background,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -22,40 +24,37 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Text(
                 "Ultralearning",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
               Text(
                 "Join in our community",
                 style: TextStyle(fontSize: 22.0, color: Colors.white),
               ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CustomTextFormField(),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CustomTextFormField(),
+              ),
               Spacer(),
-              GreyButton(
+              CustomButton(
                 onPressed: () {},
-                name: 'Sign up with email',
-                color: AppColors.mainGreen,
+                name: 'Sign in',
+                color: AppColors.blueGrey,
                 textColor: Colors.white,
               ),
-              GreyButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return MyHomePage();
-                      },
-                    ),
-                  );
-                },
-                name: 'Sign in',
-              ),
-              Text("Or continue with"),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GreyButton(onPressed: () {}, name: 'Facebook'),
-                  SizedBox(width: 10),
-                  GreyButton(onPressed: () {}, name: 'Twitter'),
-                ],
+              Text("Or", style: TextStyle(color: Colors.white)),
+              CustomButton(
+                onPressed: () {},
+                name: 'Continue with Google',
+                color: AppColors.blueGrey,
+                textColor: Colors.white,
+                iconData: FontAwesomeIcons.google,
               ),
             ],
           ),
