@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skillforge/widgets/grey_button.dart';
+import 'package:skillforge/widgets/custom_button.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -35,7 +35,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           Text("Teste 01"),
           Text("Ultra-learner"),
-          GreyButton(onPressed: () {}, name: "Edit profile"),
+          CustomButton(onPressed: () {}, name: "Edit profile"),
           Flexible(
             child: GridView.builder(
               itemCount: listProjects.length,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static const String fontFamily = 'SpaceGrotesk-Regular';
+  static const String fontFamily = 'SpaceGrotesk';
 
   static ThemeData lightTheme() {
     return ThemeData(
