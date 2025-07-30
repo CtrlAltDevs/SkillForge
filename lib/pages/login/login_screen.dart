@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:skillforge/utils/app_colors.dart';
 import 'package:skillforge/widgets/custom_button.dart';
 import 'package:skillforge/widgets/custom_text_form_field.dart';
@@ -35,11 +35,18 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: CustomTextFormField(),
+                child: CustomTextFormField(
+                  hintText: "E-mail",
+                  prefixIcon: FontAwesomeIcons.envelope,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: CustomTextFormField(),
+                child: CustomTextFormField(
+                  hintText: "Password",
+                  prefixIcon: FontAwesomeIcons.key,
+                  obscureText: true,
+                ),
               ),
               Spacer(),
               CustomButton(
@@ -55,6 +62,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: AppColors.blueGrey,
                 textColor: Colors.white,
                 iconData: FontAwesomeIcons.google,
+              ),
+              Padding(
+                padding: EdgeInsetsGeometry.only(top: 20.0),
+                child: TextButton(
+                  onPressed: () => context.go("/register"),
+                  child: Text(
+                    "Sign Up",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

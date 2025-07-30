@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class CustomTextFormField extends StatefulWidget {
-  const CustomTextFormField({super.key});
+  final IconData prefixIcon;
+  final String hintText;
+  final bool obscureText;
+  const CustomTextFormField({
+    super.key,
+    required this.prefixIcon,
+    required this.hintText,
+    this.obscureText = false,
+  });
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -15,9 +21,11 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return TextFormField(
       decoration: InputDecoration(
         isDense: true,
+        hintText: widget.hintText,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),
-        prefixIcon: Icon(FontAwesomeIcons.envelope),
+        prefixIcon: Icon(widget.prefixIcon),
       ),
+      obscureText: widget.obscureText,
     );
   }
 }

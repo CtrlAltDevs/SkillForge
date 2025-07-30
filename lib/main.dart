@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:skillforge/pages/login/login_screen.dart';
+import 'package:skillforge/core/routes.dart';
 import 'package:skillforge/utils/app_theme.dart';
 
 void main() async {
@@ -14,10 +14,10 @@ class SkillForgeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: routes,
       title: 'Flutter Demo',
       theme: AppTheme.lightTheme(),
-      home: const LoginScreen(),
     );
   }
 }
