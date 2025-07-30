@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:skillforge/utils/app_colors.dart';
 import 'package:skillforge/widgets/custom_button.dart';
 import 'package:skillforge/widgets/custom_text_form_field.dart';
@@ -29,7 +30,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 minHeight:
                     MediaQuery.of(context).size.height -
                     MediaQuery.of(context).padding.top -
-                    MediaQuery.of(context).padding.bottom,
+                    MediaQuery.of(context).padding.bottom -
+                    50, // removendo 50 pois estava ultrapassando em alguns devices
               ),
               child: IntrinsicHeight(
                 child: Column(
@@ -106,7 +108,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                 color: Colors.amber,
                                 fontSize: 12.0,
                               ),
-                              recognizer: TapGestureRecognizer()..onTap = () {},
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  context.go("/register");
+                                },
                             ),
                           ],
                         ),

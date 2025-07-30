@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
@@ -17,57 +18,55 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent, // Make app bar transparent
-        elevation: 0, // Remove shadow
-        leading: IconButton(
-          icon: const Icon(
-            FontAwesomeIcons.arrowLeft,
-            color: Colors.white,
-          ), // Back arrow icon
-          onPressed: () {
-            context.go("/login");
-          },
-        ),
-      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
             children: [
-              const Text(
+              const SizedBox(height: 16),
+              Text(
                 "Ultralearning",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 30.0, // Increased font size for title
+                  fontSize: 24,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 8.0), // Spacing
-              const Text(
-                "Join our community!", // Adjusted subtitle for registration
+              const SizedBox(height: 8),
+              Text(
+                "Join in our community",
                 style: TextStyle(fontSize: 22.0, color: Colors.white),
               ),
-              const SizedBox(height: 30.0), // Spacing before text fields
+              const SizedBox(height: 8),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Welcome to the best platform to connect ultralearners",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 14.0, color: Colors.white),
+                ),
+              ),
+              Image.asset("assets/images/logo_skillforge.png", height: 150),
+              const SizedBox(height: 12),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: CustomTextFormField(
                   hintText: 'Email',
-                  icon: FontAwesomeIcons.envelope, // Email icon
+                  icon: Icons.email_outlined, // Email icon
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: CustomTextFormField(
                   hintText: 'Full Name',
-                  icon: FontAwesomeIcons.user, // User icon
+                  icon: Icons.person_outline_rounded, // User icon
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: CustomTextFormField(
                   hintText: 'Password',
-                  icon: FontAwesomeIcons.key, // Lock icon
+                  icon: Icons.lock_outline, // Lock icon
                   obscureText: true, // Hide password
                 ),
               ),
@@ -75,7 +74,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: CustomTextFormField(
                   hintText: 'Confirm Password',
-                  icon: FontAwesomeIcons.key, // Lock icon
+                  icon: Icons.lock_outline, // Lock icon
                   obscureText: true, // Hide password
                 ),
               ),
@@ -85,41 +84,41 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   // Handle registration logic here
                 },
                 name: 'Register',
-                color: AppColors.blueGrey,
-                textColor: Colors.white,
+                color: Colors.white,
+                textColor: AppColors.blueGrey,
               ),
               CustomButton(
                 onPressed: () {
                   // Handle Google registration logic here
                 },
                 name: 'Continue with Google',
-                color: AppColors.blueGrey,
-                textColor: Colors.white,
+                color: Colors.white,
+                textColor: AppColors.blueGrey,
                 iconData: FontAwesomeIcons.google,
               ),
               const SizedBox(
                 height: 20.0,
               ), // Spacing before "Already have an account?"
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Already have an account?",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      context.go("/login");
-                    },
-                    child: const Text(
-                      "Sign in",
-                      style: TextStyle(
-                        color: Colors.blue, // A distinct color for the link
-                        fontWeight: FontWeight.bold,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Already have an account? ",
+                        style: TextStyle(color: Colors.white, fontSize: 12.0),
                       ),
-                    ),
+                      TextSpan(
+                        text: "Sign Up",
+                        style: TextStyle(color: Colors.amber, fontSize: 12.0),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            context.go("/login");
+                          },
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
               const SizedBox(height: 20.0), // Bottom padding
             ],
