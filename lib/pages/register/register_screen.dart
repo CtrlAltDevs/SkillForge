@@ -53,21 +53,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: CustomTextFormField(
                   hintText: 'Email',
-                  prefixIcon: FontAwesomeIcons.envelope, // Email icon
+                  icon: FontAwesomeIcons.envelope, // Email icon
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: CustomTextFormField(
                   hintText: 'Full Name',
-                  prefixIcon: FontAwesomeIcons.user, // User icon
+                  icon: FontAwesomeIcons.user, // User icon
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: CustomTextFormField(
                   hintText: 'Password',
-                  prefixIcon: FontAwesomeIcons.key, // Lock icon
+                  icon: FontAwesomeIcons.key, // Lock icon
                   obscureText: true, // Hide password
                 ),
               ),
@@ -75,7 +75,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: CustomTextFormField(
                   hintText: 'Confirm Password',
-                  prefixIcon: FontAwesomeIcons.key, // Lock icon
+                  icon: FontAwesomeIcons.key, // Lock icon
                   obscureText: true, // Hide password
                 ),
               ),
