@@ -20,3 +20,5 @@ A Flutter application focused on **intensive learning** and **self-improvement**
    ```bash
    git clone https://github.com/ctrlaltdevs/skillforge.git
    cd skillforge
+
+2. **Be Happy!
