@@ -18,6 +18,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
     });
 
+    on<RegisterWithEmailAndPassword>((event, emit) async {
+      emit(AuthLoading());
+      try {
+        await authRepository.signInWithEmail(event.email, event.password);
+        emit(AuthSuccess());
+      } catch (e) {
+        emit(AuthFailure(e.toString()));
+      }
+    });
+
     on<AuthSignOut>((event, emit) async {
       await authRepository.signOut();
       emit(AuthInitial());
