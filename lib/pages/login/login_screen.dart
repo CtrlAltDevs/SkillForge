@@ -20,7 +20,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
@@ -86,12 +86,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       CustomTextFormField(
                         labelText: "Write your e-mail",
                         icon: Icons.mail_outline,
+                        controller: _emailController,
                       ),
                       const SizedBox(height: 12),
                       CustomTextFormField(
                         labelText: "Write your password",
                         icon: Icons.lock_outline,
                         obscureText: true,
+                        controller: _passwordController,
                       ),
                       const SizedBox(height: 24),
                       CustomButton(
