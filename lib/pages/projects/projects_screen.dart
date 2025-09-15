@@ -10,6 +10,13 @@ class ProjectsScreen extends StatefulWidget {
 class _ProjectsScreenState extends State<ProjectsScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: Text(
+          "Projects Screen",
+          style: TextStyle(fontSize: 24.0, color: Colors.white),
+        ),
+      ),
+    );
   }
 }

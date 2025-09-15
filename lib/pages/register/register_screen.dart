@@ -5,9 +5,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skillforge/authentication/bloc/auth_bloc.dart';
 import 'package:skillforge/authentication/bloc/auth_event.dart';
+import 'package:skillforge/shared/custom_button.dart';
+import 'package:skillforge/shared/custom_text_form_field.dart';
 import 'package:skillforge/utils/app_colors.dart';
-import 'package:skillforge/widgets/custom_button.dart';
-import 'package:skillforge/widgets/custom_text_form_field.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
