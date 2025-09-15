@@ -27,7 +27,7 @@ class SkillForgeApp extends StatelessWidget {
       child: MaterialApp.router(
         routerConfig: routes,
         title: 'Flutter Demo',
-        theme: AppTheme.lightTheme(),
+        theme: AppTheme.themeApp(),
       ),
     );
   }
